@@ -1,0 +1,25 @@
+﻿---
+BasedOnStyle: WebKit
+Language: Cpp
+PointerAlignment: Left
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: 'false'
+SeparateDefinitionBlocks: Always
+Standard: c++14
+UseTab: Never
+ColumnLimit: 100
+FixNamespaceComments: 'true'
+NamespaceIndentation: 'None'
+AlwaysBreakTemplateDeclarations: 'Yes'
+QualifierAlignment: Right
+
+
+SortIncludes: 'true'
+IncludeCategories:
+  - Regex: '"*(.hpp)"'
+    Priority: 2
+  - Regex: '<*(.hpp)>'
+    Priority: 2
+  - Regex: '^((?!(.hpp)).)*$'
+    Priority: 4
+...

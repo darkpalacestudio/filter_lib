@@ -66,7 +66,7 @@ jobs:
 
       - name: Test
         working-directory: ${{github.workspace}}/build/test
-        run: Debug\filter_lib_test
+        run: Debug\filter_lib_test  ~[OnlyLinux]
   Mac:
     runs-on: macos-latest
     steps:
@@ -89,5 +89,5 @@ jobs:
         run: cmake --build . --parallel --target filter_lib_test
 
       - name: Test
-        run: ./filter_lib_test
+        run: ./filter_lib_test ~[OnlyLinux]
         working-directory: ${{github.workspace}}/build/test/

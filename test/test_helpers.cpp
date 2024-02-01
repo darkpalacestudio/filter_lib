@@ -39,9 +39,9 @@ float test_helpers::integrate(std::vector<float> const& data, float sample_rate)
         data.cbegin(), data.cend(), 0.0f, [deltaT](float s, float x) { return s + x * deltaT; });
 }
 
-TEST_CASE("generate test data")
+TEST_CASE("generate test data", "[OnlyLinux]")
 {
-    for (auto const freq : { 1.0f }) {
+    for (auto const freq : { 1.0f, 5.0f, 50.0f }) {
         SECTION("sin f " + test_helpers::floatToStringWithXDecimalDigits(freq, 0))
         {
             auto const generated_waveform = test_helpers::createInputWithSine(freq, 44100.0f);

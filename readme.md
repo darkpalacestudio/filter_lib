@@ -7,6 +7,6 @@ compared to the original repo:
 
 - Upgrade to cpp20
 - Add some tests
-- Add CI for testing to build on win, linux and mac.
+- Add CI job via github actions
 - Fix for SO_APF [Link to issue](https://github.com/dimtass/DSP-Cpp-filters/issues/5)
 

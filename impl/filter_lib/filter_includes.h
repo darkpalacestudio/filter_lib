@@ -1,4 +1,5 @@
 #pragma once
+#include "fo_apf.hpp"
 #include "fo_hpf.hpp"
 #include "fo_lpf.hpp"
 #include "fo_shelving_high.hpp"
@@ -17,4 +18,3 @@
 #include "so_parametric_cq_boost.hpp"
 #include "so_parametric_cq_cut.hpp"
 #include "so_parametric_ncq.hpp"
-#include "fo_apf.h"

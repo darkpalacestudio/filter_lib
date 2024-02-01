@@ -10,5 +10,5 @@
 
 class SO_APF : public Biquad {
 public:
-    tp_coeffs& calculate_coeffs(float Q, float sampling_rate_hz);
+    tp_coeffs& calculate_coeffs(float Q, float filter_frequency_hz, float sampling_rate_hz);
 };

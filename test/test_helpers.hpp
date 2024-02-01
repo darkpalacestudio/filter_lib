@@ -11,5 +11,7 @@ std::string floatToStringWithXDecimalDigits(float const number, unsigned number_
 
 std::vector<float> createInputWithSine(float frequency_hz, float sampling_rate_hz);
 
+float integrate(std::vector<float> const& data, float sample_rate);
+
 } // namespace test_helpers
 #endif // TEST_HELPERS_HPP

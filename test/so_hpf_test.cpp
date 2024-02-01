@@ -3,8 +3,6 @@
 #include <filter_lib/so_hpf.hpp>
 #include <Approvals.h>
 
-#include <iostream>
-
 TEST_CASE("SO HPF does not affect frequency significantly above cutoff")
 {
     SO_HPF filter;

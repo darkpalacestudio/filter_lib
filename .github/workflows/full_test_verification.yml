@@ -41,11 +41,15 @@ jobs:
 
       - name: Build
         working-directory: ${{github.workspace}}/build
-        run: cmake --build . --parallel --target filter_lib_test
+        run: cmake --build . --parallel --target filter_lib_unit_integration_test filter_lib_unit_test
 
-      - name: Test
-        run: ./filter_lib_test
-        working-directory: ${{github.workspace}}/build/test
+      - name: Run unit tests
+        run: ./filter_lib_unit_test
+        working-directory: ${{github.workspace}}/build/test/unit_test
+
+      - name: Run unit integration tests
+        run: ./filter_lib_unit_integration_test
+        working-directory: ${{github.workspace}}/build/test/unit_integration_test
 
   Windows:
     runs-on: windows-2019
@@ -62,7 +66,7 @@ jobs:
 
       - name: Build
         working-directory: ${{github.workspace}}/build
-        run: cmake --build . --parallel --target filter_lib_test
+        run: cmake --build . --parallel --target filter_lib_unit_integration_test
 
   Mac:
     runs-on: macos-latest
@@ -83,4 +87,4 @@ jobs:
 
       - name: Build
         working-directory: ${{github.workspace}}/build
-        run: cmake --build . --parallel --target filter_lib_test
+        run: cmake --build . --parallel --target filter_lib_unit_integration_test

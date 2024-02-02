@@ -9,7 +9,7 @@ Biquad::tp_coeffs& FO_HPF::calculate_coeffs(float filter_frequency_hz, float sam
     }
 
     coef_t const th
-        = 2.0f * static_cast<float>(std::numbers::pi) * filter_frequency_hz / sampling_rate_hz;
+        = 2.0f * std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz;
     coef_t const g = std::cos(th) / (1.0f + std::sin(th));
 
     m_coeffs.a0 = (1.0f + g) / 2.0f;

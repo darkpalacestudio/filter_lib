@@ -5,9 +5,9 @@
 Biquad::tp_coeffs& FO_APF::calculate_coeffs(float filter_frequency_hz, float sampling_rate_hz)
 {
     coef_t const a
-        = (std::tan(static_cast<float>(std::numbers::pi) * filter_frequency_hz / sampling_rate_hz)
+        = (std::tan(std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz)
               - 1.0f)
-        / (std::tan(static_cast<float>(std::numbers::pi) * filter_frequency_hz / sampling_rate_hz)
+        / (std::tan(std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz)
             + 1.0f);
 
     m_coeffs.a0 = a;

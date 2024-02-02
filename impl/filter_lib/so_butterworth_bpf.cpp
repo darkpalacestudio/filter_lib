@@ -7,10 +7,10 @@ Biquad::tp_coeffs& SO_BUTTERWORTH_BPF::calculate_coeffs(
 {
     coef_t const c = 1.0f
         / (std::tan(
-            static_cast<float>(std::numbers::pi) * filter_frequency_hz * bw / sampling_rate_hz));
+            std::numbers::pi_v<float> * filter_frequency_hz * bw / sampling_rate_hz));
     coef_t const d = 2.0f
         * std::cos(
-            2.0f * static_cast<float>(std::numbers::pi) * filter_frequency_hz / sampling_rate_hz);
+            2.0f * std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz);
 
     m_coeffs.a0 = 1.0f / (1.0f + c);
     m_coeffs.a1 = 0.0f;

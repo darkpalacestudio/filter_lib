@@ -6,7 +6,7 @@ Biquad::tp_coeffs& FO_SHELVING_HIGH::calculate_coeffs(
     float gain_db, float filter_frequency_hz, float sampling_rate_hz)
 {
     coef_t const th
-        = 2.0f * static_cast<float>(std::numbers::pi) * filter_frequency_hz / sampling_rate_hz;
+        = 2.0f * std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz;
     coef_t const m = std::pow(10.0f, gain_db / 20.0f);
     coef_t const b = (1.0f + m) / 4.0f;
     coef_t const d = b * std::tan(th / 2.0f);

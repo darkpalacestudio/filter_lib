@@ -28,4 +28,12 @@ if (FILTERLIB_ENABLE_TESTS)
             GITHUB_REPOSITORY approvals/ApprovalTests.cpp
             GIT_TAG master
     )
+
+    CPMAddPackage(
+            NAME googletest
+            GITHUB_REPOSITORY google/googletest
+            GIT_TAG v1.14.0
+            VERSION 1.14.0
+            OPTIONS "INSTALL_GTEST OFF" "gtest_force_shared_crt"
+    )
 endif ()

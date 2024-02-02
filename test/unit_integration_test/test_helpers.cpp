@@ -26,7 +26,7 @@ std::vector<float> test_helpers::createInputWithSine(float frequency_hz, float s
 
     for (auto i = 0u; i != number_of_samples; ++i) {
         auto const t = static_cast<float>(i) / sampling_rate_hz;
-        input[i] = std::sin(t * static_cast<float>(std::numbers::pi) * 2.0f * frequency_hz);
+        input[i] = std::sin(t * std::numbers::pi_v<float> * 2.0f * frequency_hz);
     }
 
     return input;

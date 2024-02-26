@@ -1,4 +1,4 @@
-# C++20 Audio Filter Library [![Build Status](https://github.com/darkpalacestudio/filter_lib/actions/workflows/full_test_verification.yml/badge.svg)](https://github.com/Laguna1989/JamTemplateCpp/actions/workflows/unittests.yml) |  ![GitHub repo size](https://img.shields.io/github/repo-size/darkpalacestudio/filter_lib)
+# C++20 Audio Filter Library [![Build Status](https://github.com/darkpalacestudio/filter_lib/actions/workflows/full_test_verification.yml/badge.svg)](https://github.com/Laguna1989/JamTemplateCpp/actions/workflows/unittests.yml)   ![GitHub repo size](https://img.shields.io/github/repo-size/darkpalacestudio/filter_lib)
 
 Audio biquad filter library that is based on [DSP-Cpp-filters](https://github.com/dimtass/DSP-Cpp-filters).
 

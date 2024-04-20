@@ -26,7 +26,7 @@ if (FILTERLIB_ENABLE_TESTS)
     CPMAddPackage(
             NAME approvaltests
             GITHUB_REPOSITORY approvals/ApprovalTests.cpp
-            GIT_TAG master
+            GIT_TAG v.10.13.0
     )
 
     CPMAddPackage(

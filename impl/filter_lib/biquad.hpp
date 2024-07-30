@@ -27,6 +27,8 @@ public:
     void set_offset(coef_t offset);
     [[nodiscard]] coef_t get_offset() const;
 
+    void reset();
+
 protected:
     coef_t m_xnz1 { 0.0f };
     coef_t m_xnz2 { 0.0f };

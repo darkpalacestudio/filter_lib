@@ -7,7 +7,7 @@ Biquad::tp_coeffs& SO_APF::calculate_coeffs(
     float Q, float filter_frequency_hz, float sampling_rate_hz)
 {
     // sanitize values
-    Q = std::clamp(Q, 0.0001f, 10000.0f);
+    Q = std::clamp(Q, 0.1f, 10000.0f);
     filter_frequency_hz = std::clamp(filter_frequency_hz, 1.0f, sampling_rate_hz);
 
     // calculate helper variables
@@ -22,5 +22,9 @@ Biquad::tp_coeffs& SO_APF::calculate_coeffs(
     m_coeffs.a2 = 1.0f;
     m_coeffs.b1 = m_coeffs.a1;
     m_coeffs.b2 = m_coeffs.a0;
+
+    // clean past samples
+    reset();
+
     return (std::ref(m_coeffs));
 }

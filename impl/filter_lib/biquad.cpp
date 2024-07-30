@@ -25,3 +25,11 @@ Biquad::coef_t Biquad::process(coef_t sample)
 void Biquad::set_offset(coef_t offset) { m_offset = offset; }
 
 Biquad::coef_t Biquad::get_offset() const { return (m_offset); }
+
+void Biquad::reset()
+{
+    m_xnz1 *= 0.9f;
+    m_xnz2 *= 0.9f;
+    m_ynz1 *= 0.9f;
+    m_ynz2 *= 0.9f;
+}

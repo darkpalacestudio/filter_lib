@@ -28,6 +28,7 @@ public:
     [[nodiscard]] coef_t get_offset() const;
 
     void reset();
+    void resetHard();
 
 protected:
     coef_t m_xnz1 { 0.0f };

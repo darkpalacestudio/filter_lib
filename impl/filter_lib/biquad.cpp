@@ -33,3 +33,11 @@ void Biquad::reset()
     m_ynz1 *= 0.9f;
     m_ynz2 *= 0.9f;
 }
+
+void Biquad::resetHard()
+{
+    m_xnz1 = 0.0f;
+    m_xnz2 = 0.0f;
+    m_ynz1 = 0.0f;
+    m_ynz2 = 0.0f;
+}

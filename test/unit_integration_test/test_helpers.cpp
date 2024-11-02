@@ -39,13 +39,25 @@ float test_helpers::integrate(std::vector<float> const& data, float sample_rate)
         data.cbegin(), data.cend(), 0.0f, [deltaT](float s, float x) { return s + x * deltaT; });
 }
 
+std::string test_helpers::getOSName()
+{
+#if _MSC_VER
+    return "win";
+#else
+    return "linux";
+#endif
+}
+
 TEST_CASE("generate test data")
 {
     for (auto const freq : { 1.0f, 5.0f, 50.0f }) {
         SECTION("sin f " + test_helpers::floatToStringWithXDecimalDigits(freq, 0))
         {
             auto const generated_waveform = test_helpers::createInputWithSine(freq, 44100.0f);
-            ApprovalTests::Approvals::verifyAll(generated_waveform);
+            SECTION(test_helpers::getOSName())
+            {
+                ApprovalTests::Approvals::verifyAll(generated_waveform);
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ TEST_CASE("FO HPF does not affect frequency significantly above cutoff")
         REQUIRE(output[i] - input[i] < epsilon);
     }
 
-    ApprovalTests::Approvals::verifyAll(output);
+    SECTION(test_helpers::getOSName()) { ApprovalTests::Approvals::verifyAll(output); }
 }
 
 TEST_CASE("FO HPF attenuates frequency below cutoff")
@@ -48,5 +48,5 @@ TEST_CASE("FO HPF attenuates frequency below cutoff")
         REQUIRE(output[i] < epsilon);
     }
 
-    ApprovalTests::Approvals::verifyAll(output);
+    SECTION(test_helpers::getOSName()) { ApprovalTests::Approvals::verifyAll(output); }
 }

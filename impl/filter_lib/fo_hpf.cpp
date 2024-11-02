@@ -2,21 +2,20 @@
 #include <cmath>
 #include <numbers>
 
-Biquad::tp_coeffs& FO_HPF::calculate_coeffs(float filter_frequency_hz, float sampling_rate_hz)
+Biquad::tp_coeffs& FO_HPF::calculate_coeffs(double filter_frequency_hz, double sampling_rate_hz)
 {
     if (filter_frequency_hz == m_filter_frequency_hz && sampling_rate_hz == m_fs) {
         return std::ref(m_coeffs);
     }
 
-    coef_t const th
-        = 2.0f * std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz;
-    coef_t const g = std::cos(th) / (1.0f + std::sin(th));
+    coef_t const th = 2.0 * std::numbers::pi_v<double> * filter_frequency_hz / sampling_rate_hz;
+    coef_t const g = std::cos(th) / (1.0 + std::sin(th));
 
-    m_coeffs.a0 = (1.0f + g) / 2.0f;
-    m_coeffs.a1 = -((1.0f + g) / 2.0f);
-    m_coeffs.a2 = 0.0f;
+    m_coeffs.a0 = (1.0 + g) / 2.0;
+    m_coeffs.a1 = -((1.0 + g) / 2.0);
+    m_coeffs.a2 = 0.0;
     m_coeffs.b1 = -g;
-    m_coeffs.b2 = 0.0f;
+    m_coeffs.b2 = 0.0;
 
     m_filter_frequency_hz = filter_frequency_hz;
     m_fs = sampling_rate_hz;

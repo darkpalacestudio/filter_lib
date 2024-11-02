@@ -8,16 +8,16 @@
 
 class Biquad {
 public:
-    using coef_t = float;
+    using coef_t = double;
 
     struct tp_coeffs {
-        coef_t a0 { 0.0f };
-        coef_t a1 { 0.0f };
-        coef_t a2 { 0.0f };
-        coef_t b1 { 0.0f };
-        coef_t b2 { 0.0f };
-        coef_t c0 { 0.0f };
-        coef_t d0 { 0.0f };
+        coef_t a0 { 0 };
+        coef_t a1 { 0 };
+        coef_t a2 { 0 };
+        coef_t b1 { 0 };
+        coef_t b2 { 0 };
+        coef_t c0 { 0 };
+        coef_t d0 { 0 };
     };
 
     Biquad();
@@ -31,11 +31,11 @@ public:
     void resetHard();
 
 protected:
-    coef_t m_xnz1 { 0.0f };
-    coef_t m_xnz2 { 0.0f };
-    coef_t m_ynz1 { 0.0f };
-    coef_t m_ynz2 { 0.0f };
-    coef_t m_offset { 0.0f };
+    coef_t m_xnz1 { 0 };
+    coef_t m_xnz2 { 0 };
+    coef_t m_ynz1 { 0 };
+    coef_t m_ynz2 { 0 };
+    coef_t m_offset { 0 };
 
     tp_coeffs m_coeffs;
 };

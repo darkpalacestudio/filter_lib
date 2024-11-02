@@ -1,12 +1,12 @@
 #include "biquad.hpp"
 
 Biquad::Biquad()
-    : m_xnz1(0.0f)
-    , m_xnz2(0.0f)
-    , m_ynz1(0.0f)
-    , m_ynz2(0.0f)
-    , m_offset(0.0f)
-    , m_coeffs { 0.0f }
+    : m_xnz1 { 0 }
+    , m_xnz2 { 0 }
+    , m_ynz1 { 0 }
+    , m_ynz2 { 0 }
+    , m_offset { 0 }
+    , m_coeffs { 0 }
 {
 }
 
@@ -28,16 +28,16 @@ Biquad::coef_t Biquad::get_offset() const { return (m_offset); }
 
 void Biquad::reset()
 {
-    m_xnz1 *= 0.9f;
-    m_xnz2 *= 0.9f;
-    m_ynz1 *= 0.9f;
-    m_ynz2 *= 0.9f;
+    m_xnz1 *= 0.9;
+    m_xnz2 *= 0.9;
+    m_ynz1 *= 0.9;
+    m_ynz2 *= 0.9;
 }
 
 void Biquad::resetHard()
 {
-    m_xnz1 = 0.0f;
-    m_xnz2 = 0.0f;
-    m_ynz1 = 0.0f;
-    m_ynz2 = 0.0f;
+    m_xnz1 = 0;
+    m_xnz2 = 0;
+    m_ynz1 = 0;
+    m_ynz2 = 0;
 }

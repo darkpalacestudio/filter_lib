@@ -59,7 +59,7 @@ jobs:
 
       - name: Build
         working-directory: ${{github.workspace}}/build
-        run: cmake --build . --parallel --target filter_lib_unit_integration_test
+        run: cmake --build . --parallel --target filter_lib_unit_integration_test filter_lib_unit_test
 
       - name: Run unit tests
         run: Debug\filter_lib_unit_test.exe

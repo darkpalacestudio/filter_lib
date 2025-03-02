@@ -1,5 +1,21 @@
 #include "biquad.hpp"
 
+std::array<Biquad::CoefT, 7> Biquad::CoefficientsType::toArray() const
+{
+    return std::array { a0, a1, a2, b1, b2, c0, d0 };
+}
+
+void Biquad::CoefficientsType::fromArray(std::array<CoefT, 7> const& array)
+{
+    a0 = array[0];
+    a1 = array[1];
+    a2 = array[2];
+    b1 = array[3];
+    b2 = array[4];
+    c0 = array[5];
+    d0 = array[6];
+}
+
 Biquad::Biquad()
     : m_xnz1 { 0 }
     , m_xnz2 { 0 }
@@ -25,6 +41,13 @@ Biquad::CoefT Biquad::process(CoefT const sample)
 void Biquad::setOffset(CoefT const offset) { m_offset = offset; }
 
 Biquad::CoefT Biquad::getOffset() const { return (m_offset); }
+
+void Biquad::setCoefficients(CoefficientsType const& newCoefficients)
+{
+    m_coeffs = newCoefficients;
+}
+
+Biquad::CoefficientsType const& Biquad::getCoefficients() const { return m_coeffs; }
 
 void Biquad::reset()
 {

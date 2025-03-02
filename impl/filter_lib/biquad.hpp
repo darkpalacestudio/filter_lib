@@ -6,6 +6,8 @@
  */
 #pragma once
 
+#include <array>
+
 class Biquad {
 public:
     using CoefT = double;
@@ -18,6 +20,9 @@ public:
         CoefT b2 { 0 };
         CoefT c0 { 0 };
         CoefT d0 { 0 };
+
+        [[nodiscard]] std::array<CoefT, 7> toArray() const;
+        void fromArray(std::array<CoefT, 7> const& array);
     };
 
     Biquad();
@@ -26,6 +31,9 @@ public:
 
     void setOffset(CoefT offset);
     [[nodiscard]] CoefT getOffset() const;
+
+    void setCoefficients(CoefficientsType const& newCoefficients);
+    [[nodiscard]] CoefficientsType const& getCoefficients() const;
 
     void reset();
     void resetHard();

@@ -24,8 +24,8 @@ public:
     virtual ~Biquad() = default;
     virtual coef_t process(coef_t sample);
 
-    void set_offset(coef_t offset);
-    [[nodiscard]] coef_t get_offset() const;
+    void setOffset(coef_t offset);
+    [[nodiscard]] coef_t getOffset() const;
 
     void reset();
     void resetHard();

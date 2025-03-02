@@ -22,9 +22,9 @@ Biquad::coef_t Biquad::process(coef_t sample)
     return yn + m_offset;
 }
 
-void Biquad::set_offset(coef_t offset) { m_offset = offset; }
+void Biquad::setOffset(coef_t offset) { m_offset = offset; }
 
-Biquad::coef_t Biquad::get_offset() const { return (m_offset); }
+Biquad::coef_t Biquad::getOffset() const { return (m_offset); }
 
 void Biquad::reset()
 {

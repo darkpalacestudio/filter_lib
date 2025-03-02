@@ -15,7 +15,7 @@ if (FILTERLIB_ENABLE_TESTS)
     CPMAddPackage(
             NAME catch2
             GITHUB_REPOSITORY catchorg/Catch2
-            GIT_TAG v3.5.2
+            GIT_TAG v3.8.0
             OPTIONS
             CATCH_INSTALL_DOCS OFF
             CATCH_INSTALL_HELPERS OFF

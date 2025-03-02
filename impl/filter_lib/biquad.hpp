@@ -34,6 +34,7 @@ public:
 
     void setCoefficients(CoefficientsType const& newCoefficients);
     [[nodiscard]] CoefficientsType const& getCoefficients() const;
+    [[nodiscard]] CoefficientsType& getCoefficients();
 
     void reset();
     void resetHard();

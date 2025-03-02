@@ -49,6 +49,8 @@ void Biquad::setCoefficients(CoefficientsType const& newCoefficients)
 
 Biquad::CoefficientsType const& Biquad::getCoefficients() const { return m_coeffs; }
 
+Biquad::CoefficientsType& Biquad::getCoefficients() { return m_coeffs; }
+
 void Biquad::reset()
 {
     m_xnz1 *= 0.9;

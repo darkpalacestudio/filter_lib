@@ -3,5 +3,5 @@
 
 class BiquadModified : public Biquad {
 public:
-    coef_t process(coef_t sample) override;
+    CoefT process(CoefT sample) override;
 };

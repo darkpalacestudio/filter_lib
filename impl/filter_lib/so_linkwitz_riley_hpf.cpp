@@ -2,13 +2,13 @@
 #include <cmath>
 #include <numbers>
 
-Biquad::tp_coeffs& SO_LINKWITZ_RILEY_HPF::calculate_coeffs(
-    float filter_frequency_hz, float sampling_rate_hz)
+Biquad::CoefficientsType& SO_LINKWITZ_RILEY_HPF::calculate_coeffs(
+    double const filter_frequency_hz, double const sampling_rate_hz)
 {
-    coef_t const th = std::numbers::pi_v<float> * filter_frequency_hz / sampling_rate_hz;
-    coef_t const Wc = std::numbers::pi_v<float> * filter_frequency_hz;
-    coef_t const k = Wc / std::tan(th);
-    coef_t const d = std::pow(k, 2.0f) + std::pow(Wc, 2.0f) + 2.0f * k * Wc;
+    CoefT const th = std::numbers::pi_v<double> * filter_frequency_hz / sampling_rate_hz;
+    CoefT const Wc = std::numbers::pi_v<double> * filter_frequency_hz;
+    CoefT const k = Wc / std::tan(th);
+    CoefT const d = std::pow(k, 2.0f) + std::pow(Wc, 2.0f) + 2.0f * k * Wc;
 
     m_coeffs.a0 = std::pow(k, 2.0f) / d;
     m_coeffs.a1 = -2.0f * std::pow(k, 2.0f) / d;

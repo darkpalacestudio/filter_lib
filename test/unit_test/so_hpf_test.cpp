@@ -3,7 +3,7 @@
 // Text fixture for Class-Under-Test (CUT)
 struct so_hpf : public testing::Test {
     SO_HPF* m_filter;
-    Biquad::tp_coeffs m_coeffs;
+    Biquad::CoefficientsType m_coeffs;
 
     void SetUp()
     {

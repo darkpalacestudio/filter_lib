@@ -7,14 +7,14 @@
  * Gain/attenuation in dB
  * Parametric EQs allow you to adjust the center frequency, Q and boost or cut creating any
  * arbitrary bumps or notches in the frequency response. The parametric EQ is a
- * variation on the ordinary band-pass and band-stop fi lters that generates symmetrical boost/
+ * variation on the ordinary band-pass and band-stop filters that generates symmetrical boost/
  * cut curves and mixes in the dry signal to create the fi nal response. A true digital parametric
- * EQ not only has independent controls, but each control only varies one coeffi cient in the
- * fi lter. The parametric EQs in this section afford the same frequency response but adjustments
- * in any parameter require a recalculation of all the coeffi cients. These fi lters are also called
- * peaking fi lters.
+ * EQ not only has independent controls, but each control only varies one coefficient in the
+ * filter. The parametric EQs in this section afford the same frequency response but adjustments
+ * in any parameter require a recalculation of all the coefficients. These filters are also called
+ * peaking filters.
  * This parametric EQ is not constant-Q, which means the bandwidth varies depending on the
- * boost/cut value. Some analog fi lters have the same issue, although there is occasional debate
+ * boost/cut value. Some analog filters have the same issue, although there is occasional debate
  * over whether or not this is desirable in an EQ design.
  */
 #pragma once
@@ -22,6 +22,6 @@
 
 class SO_PARAMETRIC_NCQ : public Biquad {
 public:
-    tp_coeffs& calculate_coeffs(
-        float gain_db, float Q, float filter_frequency_hz, float sampling_rate_hz);
+    CoefficientsType& calculate_coeffs(
+        double gain_db, double Q, double filter_frequency_hz, double sampling_rate_hz);
 };

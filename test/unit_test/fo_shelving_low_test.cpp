@@ -3,7 +3,7 @@
 // Text fixture for Class-Under-Test (CUT)
 struct fo_shelving_low : public testing::Test {
     FO_SHELVING_LOW* m_filter;
-    Biquad::tp_coeffs m_coeffs;
+    Biquad::CoefficientsType m_coeffs;
 
     void SetUp()
     {

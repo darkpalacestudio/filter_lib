@@ -10,5 +10,6 @@
 
 class SO_LPF : public Biquad {
 public:
-    tp_coeffs& calculate_coeffs(float Q, float filter_frequency_hz, float sampling_rate_hz);
+    CoefficientsType& calculate_coeffs(
+        double Q, double filter_frequency_hz, double sampling_rate_hz);
 };

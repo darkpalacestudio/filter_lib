@@ -3,7 +3,7 @@
 // Text fixture for Class-Under-Test (CUT)
 struct so_parametric_cq_cut : public testing::Test {
     SO_PARAMETRIC_CQ_CUT* m_filter;
-    Biquad::tp_coeffs m_coeffs;
+    Biquad::CoefficientsType m_coeffs;
 
     void SetUp()
     {

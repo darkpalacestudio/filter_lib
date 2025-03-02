@@ -3,7 +3,7 @@
 // Text fixture for Class-Under-Test (CUT)
 struct so_butterworth_bpf : public testing::Test {
     SO_BUTTERWORTH_BPF* m_filter;
-    Biquad::tp_coeffs m_coeffs;
+    Biquad::CoefficientsType m_coeffs;
 
     void SetUp()
     {

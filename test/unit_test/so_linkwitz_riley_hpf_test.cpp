@@ -3,7 +3,7 @@
 // Text fixture for Class-Under-Test (CUT)
 struct so_linkwitz_riley_hpf : public testing::Test {
     SO_LINKWITZ_RILEY_HPF* m_filter;
-    Biquad::tp_coeffs m_coeffs;
+    Biquad::CoefficientsType m_coeffs;
 
     void SetUp()
     {

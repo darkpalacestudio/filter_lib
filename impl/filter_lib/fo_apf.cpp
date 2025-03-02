@@ -2,9 +2,9 @@
 #include <cmath>
 #include <numbers>
 
-Biquad::tp_coeffs& FO_APF::calculate_coeffs(double filter_frequency_hz, double sampling_rate_hz)
+Biquad::CoefficientsType& FO_APF::calculate_coeffs(double const filter_frequency_hz, double const sampling_rate_hz)
 {
-    coef_t const a
+    CoefT const a
         = (std::tan(std::numbers::pi_v<double> * filter_frequency_hz / sampling_rate_hz) - 1.0)
         / (std::tan(std::numbers::pi_v<double> * filter_frequency_hz / sampling_rate_hz) + 1.0);
 

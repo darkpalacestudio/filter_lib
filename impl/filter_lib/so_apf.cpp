@@ -3,17 +3,17 @@
 #include <cmath>
 #include <numbers>
 
-Biquad::tp_coeffs& SO_APF::calculate_coeffs(
-    double Q, double filter_frequency_hz, double sampling_rate_hz)
+Biquad::CoefficientsType& SO_APF::calculate_coeffs(
+    double Q, double filter_frequency_hz, double const sampling_rate_hz)
 {
     // sanitize values
     Q = std::clamp(Q, 0.1, 10000.0);
     filter_frequency_hz = std::clamp(filter_frequency_hz, 1.0, sampling_rate_hz);
 
     // calculate helper variables
-    coef_t const a = (std::tan(std::numbers::pi_v<double> * Q / sampling_rate_hz) - 1.0)
+    CoefT const a = (std::tan(std::numbers::pi_v<double> * Q / sampling_rate_hz) - 1.0)
         / (std::tan(std::numbers::pi_v<double> * Q / sampling_rate_hz) + 1.0);
-    coef_t const b
+    CoefT const b
         = -std::cos(2 * std::numbers::pi_v<double> * filter_frequency_hz / sampling_rate_hz);
 
     // calculate coefficients

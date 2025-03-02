@@ -10,10 +10,10 @@ Biquad::Biquad()
 {
 }
 
-Biquad::coef_t Biquad::process(coef_t sample)
+Biquad::CoefT Biquad::process(CoefT const sample)
 {
-    coef_t const xn = sample;
-    coef_t const yn = m_coeffs.a0 * xn + m_coeffs.a1 * m_xnz1 + m_coeffs.a2 * m_xnz2
+    CoefT const xn = sample;
+    CoefT const yn = m_coeffs.a0 * xn + m_coeffs.a1 * m_xnz1 + m_coeffs.a2 * m_xnz2
         - m_coeffs.b1 * m_ynz1 - m_coeffs.b2 * m_ynz2;
     m_xnz2 = m_xnz1;
     m_xnz1 = xn;
@@ -22,9 +22,9 @@ Biquad::coef_t Biquad::process(coef_t sample)
     return yn + m_offset;
 }
 
-void Biquad::setOffset(coef_t offset) { m_offset = offset; }
+void Biquad::setOffset(CoefT const offset) { m_offset = offset; }
 
-Biquad::coef_t Biquad::getOffset() const { return (m_offset); }
+Biquad::CoefT Biquad::getOffset() const { return (m_offset); }
 
 void Biquad::reset()
 {

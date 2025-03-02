@@ -7,5 +7,5 @@
 
 class FO_LPF : public Biquad {
 public:
-    tp_coeffs& calculate_coeffs(float filter_frequency_hz, float sampling_rate_hz);
+    CoefficientsType& calculate_coeffs(double filter_frequency_hz, double sampling_rate_hz);
 };

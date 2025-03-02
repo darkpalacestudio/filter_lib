@@ -7,9 +7,9 @@
 
 class FO_HPF : public Biquad {
 public:
-    tp_coeffs& calculate_coeffs(double filter_frequency_hz, double sampling_rate_hz);
+    CoefficientsType& calculate_coeffs(double filter_frequency_hz, double sampling_rate_hz);
 
 private:
-    coef_t m_filter_frequency_hz { -9999.0 };
-    coef_t m_fs { -9999.0 };
+    CoefT m_filter_frequency_hz { -9999.0 };
+    CoefT m_fs { -9999.0 };
 };

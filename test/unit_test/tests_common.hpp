@@ -15,7 +15,7 @@ constexpr inline auto SAMPLING_RATE = 96000.0f;
 constexpr inline auto TEST_SAMPLE_0 = 0;
 constexpr inline auto TEST_SAMPLE_1 = 1.0f;
 
-static inline void debug_print(Biquad::tp_coeffs& coeffs)
+static inline void debug_print(Biquad::CoefficientsType& coeffs)
 {
     std::cout << "Coeffs: " << std::endl;
     std::cout << "\ta0: " << coeffs.a0 << std::endl;

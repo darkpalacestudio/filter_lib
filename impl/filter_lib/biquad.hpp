@@ -8,34 +8,34 @@
 
 class Biquad {
 public:
-    using coef_t = double;
+    using CoefT = double;
 
-    struct tp_coeffs {
-        coef_t a0 { 0 };
-        coef_t a1 { 0 };
-        coef_t a2 { 0 };
-        coef_t b1 { 0 };
-        coef_t b2 { 0 };
-        coef_t c0 { 0 };
-        coef_t d0 { 0 };
+    struct CoefficientsType {
+        CoefT a0 { 0 };
+        CoefT a1 { 0 };
+        CoefT a2 { 0 };
+        CoefT b1 { 0 };
+        CoefT b2 { 0 };
+        CoefT c0 { 0 };
+        CoefT d0 { 0 };
     };
 
     Biquad();
     virtual ~Biquad() = default;
-    virtual coef_t process(coef_t sample);
+    virtual CoefT process(CoefT sample);
 
-    void setOffset(coef_t offset);
-    [[nodiscard]] coef_t getOffset() const;
+    void setOffset(CoefT offset);
+    [[nodiscard]] CoefT getOffset() const;
 
     void reset();
     void resetHard();
 
 protected:
-    coef_t m_xnz1 { 0 };
-    coef_t m_xnz2 { 0 };
-    coef_t m_ynz1 { 0 };
-    coef_t m_ynz2 { 0 };
-    coef_t m_offset { 0 };
+    CoefT m_xnz1 { 0 };
+    CoefT m_xnz2 { 0 };
+    CoefT m_ynz1 { 0 };
+    CoefT m_ynz2 { 0 };
+    CoefT m_offset { 0 };
 
-    tp_coeffs m_coeffs;
+    CoefficientsType m_coeffs;
 };

@@ -23,8 +23,5 @@ Biquad::CoefficientsType& SO_APF::calculate_coeffs(
     m_coeffs.b1 = m_coeffs.a1;
     m_coeffs.b2 = m_coeffs.a0;
 
-    // clean past samples
-    reset();
-
     return (std::ref(m_coeffs));
 }

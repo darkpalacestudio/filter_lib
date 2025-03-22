@@ -4,6 +4,16 @@ std::array<Biquad::CoefT, 7> Biquad::CoefficientsType::toArray() const
 {
     return std::array { a0, a1, a2, b1, b2, c0, d0 };
 }
+void Biquad::CoefficientsType::toArray(std::array<Biquad::CoefT, 7>& array) const
+{
+    array[0] = a0;
+    array[1] = a1;
+    array[2] = a2;
+    array[3] = b1;
+    array[4] = b2;
+    array[5] = c0;
+    array[6] = d0;
+}
 
 void Biquad::CoefficientsType::fromArray(std::array<CoefT, 7> const& array)
 {

@@ -22,6 +22,7 @@ public:
         CoefT d0 { 0 };
 
         [[nodiscard]] std::array<CoefT, 7> toArray() const;
+        void toArray(std::array<CoefT, 7>& array) const;
         void fromArray(std::array<CoefT, 7> const& array);
     };
 
